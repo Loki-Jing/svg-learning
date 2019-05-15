@@ -1,0 +1,44 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd" [ ]>
+<?xml-stylesheet type="text/css" href="table.css"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" width='800px' height='900px' >
+   <script type="text/ecmascript"><![CDATA[
+        function add()
+        {
+         let parent = document.getElementById("tableEditor");
+         let y =  document.getElementById("tableEditor").childElementCount*30 + 0
+         let node = parent.lastElementChild.cloneNode(true);
+         node.setAttribute("transform","translate(0,"+y+")");
+         parent.appendChild(node);
+        }
+      ]]>
+    </script>
+   
+    <defs>
+      <rect id='r' width='200' height='30' x= '0' />
+      <g id='row'>
+        <use xlink:href='#r' x=  '0' class='cell'  />
+        <use xlink:href='#r' x= '200' class='cell'  />
+        <use xlink:href='#r' x= '400' class='cell'  />
+  
+      </g>
+    </defs>
+   
+    <g transform="translate(660,100)" >
+        <rect height="30" width="80" fill="blue" id="add" onclick='add()'/>
+    </g>
+    <g transform='translate(150,150)' id="tableEditor">
+      <g transform='translate(0,  0)' >
+        <use xlink:href='#row'  />
+      </g>
+    
+      <g transform='translate(0, 30)'>
+        <use xlink:href='#row'/>
+      </g>
+    </g>
+     
+    <text x="430" y="100" class="small">My Table</text>
+    <text x="700" y="120" text-anchor = 'middle' class="btn-add"  onclick='add()'>add</text> 
+    
+</svg>
+    

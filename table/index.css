@@ -1,0 +1,12 @@
+button{
+    width:100px;
+    height:40px;
+    line-height: 40px;
+    background-color: coral;
+    color: white;
+    border: none;
+    vertical-align: top;
+}
+#table-item{
+    display: none;
+}
